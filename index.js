@@ -1,23 +1,30 @@
 // Code your solution in this file!
 
- 
-
-function distanceFromHqInBlocks(someValue)  {
-const hqLocation = 42;
-return Math.abs( someValue- hqLocation)
+function distanceFromHqInBlocks(startBlock)  {
+const destinationBlock = 42;
+if (startBlock > destinationBlock ) {
+  return (startBlock - destinationBlock)
+} else {
+  return (destinationBlock - startBlock)
+}
 }
 
-function distanceFromHqInFeet(someValue) {
-    const blocks = distanceFromHqInBlocks(someValue);
-    return blocks * 264;
+function distanceFromHqInFeet(startBlock) {
+    const distanceInBlocks = distanceFromHqInBlocks(startBlock);
+    return distanceInBlocks * 264;
   }
-  function distanceTravelledInFeet(start, destination) {
-    const blocks = Math.abs(start - destination);
-    return blocks * 264;
+  function distanceTravelledInFeet(startBlock, destinationBlock) {
+    if (startBlock > destinationBlock ) {
+      return (startBlock - destinationBlock) *264
+    } else {
+      return (destinationBlock - startBlock) *264
+    }
+
+
   }
   
-  function calculatesFarePrice(start, destination) {
-    const distance = distanceTravelledInFeet(start, destination);
+  function calculatesFarePrice(startBlock, destinationBlock) {
+    const distance = distanceTravelledInFeet(startBlock, destinationBlock);
     if (distance <= 400) {
         return 0
     }
